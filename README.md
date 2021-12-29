@@ -5,3 +5,12 @@ It works using JsonWireProtocol to comunicate with Selenium server.
 
 
 To see how it works see test directory.
+
+
+To run this project :
+
+download java jdk and set environment path and enable php curl,openssl,imap in php.ini
+
+
+first run php startServer.php
+second run php downloadImage.php
