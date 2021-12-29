@@ -1,0 +1,5 @@
+java -Dwebdriver.chrome.driver=/path/to/chromedriver.exe -jar /Users/admin/selenium-server-standalone-3.14.0.jar
+
+first go to selenium folder and then open command prompt
+java -Dwebdriver.chrome.driver=../chromeDriver/chromeDriver.exe -jar selenium-server-standalone-3.141.59.jar
+paste this comand and hit enter
