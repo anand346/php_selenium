@@ -20,11 +20,14 @@ require_once "phpwebdriver/WebDriver.php";
 
 $webdriver = new WebDriver("localhost", "4444");
 $webdriver->connect("chrome");                            
-$webdriver->get("http://google.com");
+$webdriver->get("http://wallhaven.cc");
 $element = $webdriver->findElementBy(LocatorStrategy::name, "q");
 if ($element) {
-    $element->sendKeys(array("php webdriver" ) );
+    $element->sendKeys(array("nature"));
     $element->submit();
+    $anchorElement = $webdriver->findElementBy(LocatorStrategy::className, "preview");
+    print_r($anchorElement);
+    $anchorElement->click();
 }
 
 //$webdriver->close();
