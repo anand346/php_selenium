@@ -3,53 +3,62 @@ require_once "phpwebdriver/WebDriver.php";
 // print_r($argv);die();
 
 
-//check for total no. of arguments must not greater than 3;
 
+//check if argument exists or not
 
-if($argv){
+if(sizeof($argv) > 1){
+
+    //check for total no. of arguments must not greater than 3;
+
     if(sizeof($argv) > 4){
-        die('please give topic name under "" (double quotes) ');
+        die('no. of arguments are invalid ');
     }
-}
+    //check for argument 1
 
-
-
-//check for argument 1
-
-if($argv[1]){
-    if($argv[1] == "--help" || $argv[1] == "-h"){
-        die("
-syntax : php downloadImage.php topicOfImage noOfImagesToBeDownload startNo.
-        ");
+    if($argv[1]){
+        if($argv[1] == "--help" || $argv[1] == "-h"){
+            die("
+    syntax : php downloadImage.php topicOfImage noOfImagesToBeDownload startNo.
+            ");
+        }
+        $topic = $argv[1];
+    }else{
+        $topic = "animals";
     }
-    $topic = $argv[1];
+
+    //check for argument 2
+
+    if($argv[2]){
+        $number = $argv[2];
+        if($number > 20){
+            die("no. of images to be download must not be greater than 20");
+        }
+    }else{
+        $number = 5;
+    }
+
+    //check for argument 3
+
+    if($argv[3]){
+        $start = $argv[3];
+        $number = $number + $start;
+        if($start < 1){
+            die("start value is invalid");
+        }
+    }else{
+        $start = 1;
+        $number = $number + $start;
+    }
+
 }else{
     $topic = "animals";
-}
-
-//check for argument 2
-
-if($argv[2]){
-    $number = $argv[2];
-    if($number > 20){
-        die("no. of images to be download must not be greater than 20");
-    }
-}else{
     $number = 5;
-}
-
-//check for argument 3
-
-if($argv[3]){
-    $start = $argv[3];
-    $number = $number + $start;
-    if($start < 1){
-        die("start value is invalid");
-    }
-}else{
     $start = 1;
     $number = $number + $start;
 }
+
+
+
 
 //starting web driver
 
@@ -82,4 +91,3 @@ if ($element) {
         $webdriver->close();
     }
 }
-?>

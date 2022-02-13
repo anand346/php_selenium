@@ -14,3 +14,10 @@ download java jdk and set environment path and enable php curl,openssl,imap in p
 
 first run php startServer.php
 second run php downloadImage.php
+
+Note : chromedriver version must be same as chrome version
+
+this tools is given by github.com/chibimagic
+
+Ref : https://youtu.be/cUS_51JLxVI
+Ref : https://youtu.be/554KH7Ok1tA
