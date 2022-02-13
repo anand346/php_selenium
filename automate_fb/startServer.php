@@ -1,3 +1,3 @@
 <?php
-exec("java -Dwebdriver.chrome.driver=../chromeDriver.exe -jar ../selenium-server-standalone-3.141.59.jar");
+exec("java -Dwebdriver.chrome.driver=./server/chromedriver.exe -jar ./server/selenium-server-standalone-3.141.59.jar");
 ?>
